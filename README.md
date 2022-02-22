@@ -15,3 +15,13 @@ $ conda deactivate
 $ pip install -r requirements.txt
 
 ```
+
+## Docker run 
+
+```sh
+$ docker logs -f <container_name>
+$ docker exec -it <container_name> bash
+$ docker exec -t <container_name> pg_dumpall -U user_name > dump_local_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+$ cat dump_03-02-2022_10_59_55.sql | docker exec -i <container_name> psql -U test -d test
+
+```
